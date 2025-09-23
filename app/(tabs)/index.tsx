@@ -1,98 +1,93 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
+import React, { useState } from "react";
+import { Button, FlatList, StyleSheet, Text, TextInput, View } from "react-native";
 
-import { HelloWave } from '@/components/hello-wave';
-import ParallaxScrollView from '@/components/parallax-scroll-view';
-import { ThemedText } from '@/components/themed-text';
-import { ThemedView } from '@/components/themed-view';
-import { Link } from 'expo-router';
 
-export default function HomeScreen() {
+const App = () => {
+    const [task, setTask] = useState("");
+    const [tasks, setTasks] = useState([]);
+
+    const addTask = () =>{
+        if(task.trim().length > 0){
+            setTasks([...tasks, task]);
+            setTask("");
+        }
+    };
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12',
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <Link href="/modal">
-          <Link.Trigger>
-            <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-          </Link.Trigger>
-          <Link.Preview />
-          <Link.Menu>
-            <Link.MenuAction title="Action" icon="cube" onPress={() => alert('Action pressed')} />
-            <Link.MenuAction
-              title="Share"
-              icon="square.and.arrow.up"
-              onPress={() => alert('Share pressed')}
+    <View style={styles.container}>
+        <Text style={styles.text}>TO DO LIST</Text>
+        <View style={styles.row}>
+            
+            <TextInput
+                style = {styles.input}
+                placeholder="Add tasks"
+                value={task}
+                onChangeText={setTask}
             />
-            <Link.Menu title="More" icon="ellipsis">
-              <Link.MenuAction
-                title="Delete"
-                icon="trash"
-                destructive
-                onPress={() => alert('Delete pressed')}
-              />
-            </Link.Menu>
-          </Link.Menu>
-        </Link>
+        </View>
+        <View style = {styles.button}>
+                <Button title="Add" onPress={addTask} />
+        </View>
+        <View style ={styles.taskBox}>
+            <FlatList
+                data={tasks}
+                renderItem={({ item }) => <Text style={styles.task}>{item}</Text>}
+                keyExtractor={(item,index) => index.toString()}
+            />
+        </View>
+    </View>
 
-        <ThemedText>
-          {`Tap the Explore tab to learn more about what's included in this starter app.`}
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          {`When you're ready, run `}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
   );
-}
+};
+
+export default App;
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
+    container: {
+        flex: 1,
+
+    },
+    text: {
+        color: 'white',
+        fontSize: 28,
+        textAlign: 'center',
+        paddingTop: 30,
+    },
+    row: {
+        flexDirection: 'row',
+        gap: 50,
+        marginTop: 50,
+        justifyContent: 'center',
+    },
+    button: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginLeft: 110,
+        marginRight: 110,
+        marginTop: 10,
+        gap: 50,
+
+    },
+    input: {
+        flex: 1,
+        backgroundColor: "white",
+        padding: 8,
+        borderRadius: 5,
+        fontSize: 18,
+    },
+
+    taskBox: {
+        margin: 20,
+        padding: 10,
+        backgroundColor: "#222",
+        borderRadius: 10,
+        flex: 1,
+    },
+    task: {
+        color: 'white',
+        fontSize: 18,
+        padding: 5,
+        borderBottomColor: "gray",
+        borderBottomWidth: 1,
+    }
+
+})
