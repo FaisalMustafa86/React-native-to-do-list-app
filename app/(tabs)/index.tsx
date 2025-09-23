@@ -11,6 +11,7 @@ const App = () => {
             setTasks([...tasks, task]);
             setTask("");
         }
+    
     };
   return (
     <View style={styles.container}>
