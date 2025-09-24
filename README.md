@@ -1,50 +1,73 @@
-# Welcome to your Expo app 👋
+# 📝 React Native To-Do List App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple **React Native To-Do List** application where users can add and display tasks.  
+Built as a practice project to learn React Native basics like **state, FlatList, and user input handling**.
 
-## Get started
+---
 
-1. Install dependencies
+## 🚀 Features
+- Add tasks using a text input and button
+- Display tasks in a styled list
+- Simple and clean UI with dark theme
+- Uses React Native hooks (`useState`) for state management
 
+---
+
+## 📂 Project Structure
+
+/ReactNativeTodoApp
+│── App.js # Main app code
+│── package.json # Project dependencies
+│── /android # Android native code
+│── /ios # iOS native code
+│── /node_modules # Installed packages
+
+
+---
+
+## 🛠️ Installation & Setup
+
+1. Clone this repo:
    ```bash
-   npm install
-   ```
+   git clone https://github.com/yourusername/react-native-todo-app.git
 
-2. Start the app
+    Go to the project folder:
 
-   ```bash
-   npx expo start
-   ```
+cd react-native-todo-app
 
-In the output, you'll find options to open the app in a
+Install dependencies:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+npm install
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Run the app:
 
-## Get a fresh project
+    For Android:
 
-When you're ready, run:
+npx react-native run-android
 
+For iOS (Mac only):
+
+        npx react-native run-ios
+
+📸 Screenshot (Optional)
+
+Add a screenshot here once you run the app.
+🤝 Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you’d like to change.
+📜 License
+
+This project is open source and available under the MIT License
+
+.
+
+
+---
+
+👉 You can create this file with:  
 ```bash
-npm run reset-project
-```
+echo "# React Native To-Do List App" > README.md
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Or just copy-paste the above content into a new file named README.md in your project root.
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Do you want me to also make a LICENSE file (MIT) so your repo looks professional?
