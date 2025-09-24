@@ -31,9 +31,9 @@ Built as a practice project to learn React Native basics like **state, FlatList,
    ```bash
    git clone https://github.com/yourusername/react-native-todo-app.git
 
-    Go to the project folder:
+Go to the project folder:
 
-cd react-native-todo-app
+      cd react-native-todo-app
 
 Install dependencies:
 
@@ -41,15 +41,13 @@ npm install
 
 Run the app:
 
-    For Android:
+For Android:
 
-npx react-native run-android
+        npx react-native run-android
 
 For iOS (Mac only):
 
         npx react-native run-ios
-
-📸 Screenshot (Optional)
 
 Add a screenshot here once you run the app.
 🤝 Contributing
@@ -60,14 +58,3 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 This project is open source and available under the MIT License
 
 .
-
-
----
-
-👉 You can create this file with:  
-```bash
-echo "# React Native To-Do List App" > README.md
-
-Or just copy-paste the above content into a new file named README.md in your project root.
-
-Do you want me to also make a LICENSE file (MIT) so your repo looks professional?
