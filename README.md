@@ -13,18 +13,6 @@ Built as a practice project to learn React Native basics like **state, FlatList,
 
 ---
 
-## 📂 Project Structure
-
-/ReactNativeTodoApp
-│── App.js # Main app code
-│── package.json # Project dependencies
-│── /android # Android native code
-│── /ios # iOS native code
-│── /node_modules # Installed packages
-
-
----
-
 ## 🛠️ Installation & Setup
 
 1. Clone this repo:
